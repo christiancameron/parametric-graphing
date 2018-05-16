@@ -19,16 +19,24 @@ class Equation {
   void display() {
     stroke(0);
     
+    int prevX = 0;
+    int prevY = 0;
+    
     for(int i = tStart; i < tEnd/Settings.drawStep; i++) {
       float t = (float) (i * Settings.drawStep);
-      float x = 2 + cos(t*PI);
-      float y = 5 + sin(t*2*PI);
-      point(x * Settings.sizeX,y * Settings.sizeY);
+      float x = sin(t*PI*2) + cos(t);
+      float y = cos(3*PI*t);
+      println(x*Settings.ppu);
+      println(y*Settings.ppu);
+      point(x*Settings.ppu, y*Settings.ppu);
     }
-    
+  }
+  
+  float getX(float t) {
     
   }
   
-
-
+  float getY(float t) {
+    
+  } 
 }

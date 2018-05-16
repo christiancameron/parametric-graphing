@@ -3,7 +3,7 @@ Plane plane;
 
 // Setup the program
 void setup() {
-  size(Settings.canvasWidth,Settings.canvasHeight);
+  size(1000,700);
   background(240);
   plane = new Plane();
   // Generates a new random parametric equation
