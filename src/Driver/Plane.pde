@@ -1,5 +1,3 @@
-
-
 /**
  * Class to hold the current plane state, used to create and display
  *    the plane to the screen
@@ -10,7 +8,7 @@ class Plane {
   final int paddingX = (width/2)/Settings.sizeX;
   final int paddingY = (height/2)/Settings.sizeY;
   // Length of each divider
-  final int lineLength = 5;
+  final int lineLength = 4;
   
   // Draw the plane to the screen
   void display() {

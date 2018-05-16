@@ -5,8 +5,8 @@ public class Settings {
   public final static int sizeX = 50;
   public final static int sizeY = 30;
   
-  // The pixels per unit, used to help draw
-  public final static int ppu = 500/sizeX;
+  // The pixels per unit, used to help draw, should not be modifed unless canvas size changes
+  public final static int ppu = (1000/2)/sizeX;
 
   // The draw step of interating t-values
   public final static double drawStep = .01;
