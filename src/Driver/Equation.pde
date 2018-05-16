@@ -13,21 +13,13 @@ class Equation {
   // Draw the equation to the screen
   void display() {
     stroke(0);
-    
-    float prevX = getX((float) (tStart*Settings.ppu));
-    float prevY = getY((float) (tStart*Settings.ppu));
-    
+    strokeWeight(1.15);
+    // Draw all the points in the graph
     for(int i = tStart; i < tEnd/Settings.drawStep; i++) {
       float t = (float) (i * Settings.drawStep);
-      float x = getX(t);
-      float y = getY(t);
-            
-      line(prevX*Settings.ppu, prevY*Settings.ppu, x*Settings.ppu, y*Settings.ppu);
-
-      // Update the previous point
-      prevX = x;
-      prevY = y;
+      point(getX(t)*Settings.ppu, getY(t)*Settings.ppu);
     }
+    strokeWeight(1);
 
  }
   
@@ -39,6 +31,6 @@ class Equation {
   
   // Runs a function that takes a float, applies the equation, then returns the y value
   float getY(float t) {
-    return 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t);
+    return -(13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t));
   } 
 }

@@ -9,5 +9,5 @@ public class Settings {
   public final static int ppu = 500/sizeX;
 
   // The draw step of interating t-values
-  public final static double drawStep = 0.001;
+  public final static double drawStep = .01;
 }

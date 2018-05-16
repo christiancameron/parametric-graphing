@@ -8,7 +8,6 @@ void setup() {
   plane = new Plane();
   // Generates a new random parametric equation
   e = new Equation();
-
 }
 
 // Draw iterations
