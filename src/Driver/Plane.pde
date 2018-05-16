@@ -1,17 +1,14 @@
+
+
 /**
  * Class to hold the current plane state, used to create and display
  *    the plane to the screen
 */
 class Plane {
-  
-  // The number of dividers for X and Y, for one quadrant 
-  final int sizeX = 20;
-  final int sizeY = 13;
     
   // Padding between each line divider
-  final int paddingX = (width/2)/sizeX;
-  final int paddingY = (height/2)/sizeY;
-  
+  final int paddingX = (width/2)/Settings.sizeX;
+  final int paddingY = (height/2)/Settings.sizeY;
   // Length of each divider
   final int lineLength = 5;
   
@@ -25,7 +22,7 @@ class Plane {
     
     // Draw the X lines
     int buffer = paddingX;
-    for(int i = 0; i < sizeX; i++) {
+    for(int i = 0; i < Settings.sizeX; i++) {
       // Positive X lines
       line(buffer,-lineLength,buffer,lineLength);
       // Negative X lines
@@ -34,7 +31,7 @@ class Plane {
     }
     
     buffer = paddingY;
-    for(int i = 0; i < sizeY; i++) {
+    for(int i = 0; i < Settings.sizeY; i++) {
       // Positive Y lines
       line(-lineLength,buffer,lineLength,buffer);
       
