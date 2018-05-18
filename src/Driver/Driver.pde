@@ -1,9 +1,9 @@
 Plane plane; //<>//
 EquationFactory factory;
 
-// Cords of the rect button, post translate
+// Cords of the rect button, post-translate
 int bX = -475;
-int bY = 275;
+int bY = 290;
 
 // The length of the rect button
 int bH = 35;
@@ -16,7 +16,15 @@ void setup() {
   plane = new Plane();
 
   factory = new EquationFactory();
-  // Generate the first equation
+  randomDrawEquation();
+}
+
+/**
+ * Generate a new random equation, then draw it to the screen.
+ */
+void randomDrawEquation() {
+  background(240);
+   // Generate the equation
   Equation e = factory.randomEquation();
 
   // Draw the functions equations
@@ -41,8 +49,7 @@ void setup() {
   //fill(255,255,255);
   fill(0);
   textSize(15);
-  text("Random", -470, 275+22);
-  
+  text("Random", -470, 275+bH);
 }
 
 // Draw iterations, not needed with this implementation
@@ -51,5 +58,8 @@ void draw() {
 
 
 void mouseReleased() {
-  //if(
+  println(mouseX + " ," + mouseY);
+  if(mouseX > 1000/2+bX && mouseX < 1000/2+bX+bW && mouseY > 640 && mouseY < 640+bH) {
+    randomDrawEquation();
+  }
 }
