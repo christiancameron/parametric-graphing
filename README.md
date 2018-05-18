@@ -7,12 +7,13 @@ Graph parametric equations in Processing
 * To change the tick lines for the graph, modify ``` sizeX ``` and ``` sizeY ``` in ``` Settings.java ```
 * To change the visual accuracy of the display, modify ``` drawStep ``` in ``` Settings.java ```
   - Decrease the value to increase accuracy, increase to decrease accuracy
-* To change the domain of **t** modify ``` tStart ``` and ``` tEnd ``` inside ``` Equation.pde ```
-* To change the parametric function, modify ``` getX(float) ``` and ``` getY(float) ``` inside ``` Equation.pde ```
+* To change the domain of **t** modify ``` lowerBound ``` and ``` upperBound ``` inside ``` Settings.java ```
 
+#### Tutorial
+Run the Driver Processing file, it will open a Processing canvas. The parametric equations are shown in the upper left corner, in case you want to recreate the equation elsewhere. A button is drawn in the lower left corner, when pressed it will redraw a new random parametric equation. Some parametric equations might not "appear" on the graph- this is due to the randomized constant generator: just press the random button to get a better equation! The display method uses thousands of points to redraw the equation. Therefore, there might be spaces "breaking" up the graph. Enjoy!
 
 #### Additional Notes
 - ``` getY(float) ``` is negated inside the display method to flip the image so it correctly represents the mathematical graph.
-- Canvas size should not be modifed; however, if you decrease or increase the size, then the variable ``` ppu ``` inside ``` Settings.java ``` needs to be updated with the new canvas width. The width and height needs to be hardcoded because of the way Processing uses ``` size() ```
-- ``` draw() ``` inside ``` Driver.pde ``` is not needed with this implementation. If you want to redraw the equation every frame, then move the ``` translate() ``` and ``` display() ``` method calls from ``` setup() ``` to ``` draw() ```
+- Canvas size should not be modifed, as it will break the layout, which is hardcoded. Positions are hardcoded because of the way Processing uses ``` size() ```
+- ``` draw() ``` inside ``` Driver.pde ``` is not needed with this implementation. If you want to redraw something every frame, then add it here.
 - To change the tick length, modify ``` lineLength ``` inside ``` Plane.pde ```
