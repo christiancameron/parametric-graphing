@@ -12,9 +12,8 @@ int bW = 70;
 // Setup the program
 void setup() {
   size(1000, 700);
-  background(240);
-  plane = new Plane();
 
+  plane = new Plane();
   factory = new EquationFactory();
   randomDrawEquation();
 }
@@ -23,7 +22,8 @@ void setup() {
  * Generate a new random equation, then draw it to the screen.
  */
 void randomDrawEquation() {
-  background(240);
+  strokeWeight(1);
+  background(250);
    // Generate the equation
   Equation e = factory.randomEquation();
 
