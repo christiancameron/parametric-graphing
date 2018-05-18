@@ -31,7 +31,6 @@ void randomDrawEquation() {
   fill(Settings.graphColor);
   textSize(25);
   text(e.toString(), 25, 25);
-  println(e.toString());
 
   // Set orgin to be the center of the screen
   translate(width/2, height/2);
@@ -41,7 +40,6 @@ void randomDrawEquation() {
 
   //Draw the equation
   e.display();
-  println("done graphing");
   
   // Draw the button
   fill(0,255,0);
@@ -53,12 +51,9 @@ void randomDrawEquation() {
 }
 
 // Draw iterations, not needed with this implementation
-void draw() {
-}
-
+void draw() {}
 
 void mouseReleased() {
-  println(mouseX + " ," + mouseY);
   if(mouseX > 1000/2+bX && mouseX < 1000/2+bX+bW && mouseY > 640 && mouseY < 640+bH) {
     randomDrawEquation();
   }
