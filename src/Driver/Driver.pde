@@ -7,7 +7,7 @@ void setup() {
   background(240);
   plane = new Plane();
   // Generates a new random parametric equation
-  e = new Equation();
+  e = new Equation(color(204,153,0));
   
   // Set orgin to be the center of the screen
   translate(width/2, height/2);

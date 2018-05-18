@@ -1,12 +1,20 @@
 class Equation {
 
   // The domain of t, assuming the equation is continous inside the domain [tStart, tEnd)
-  int tStart = -100; 
+  int tStart = 0;
   int tEnd = 100;
+  
+  color graphColor;
+  
+  Equation(color graphCol) {
+    graphColor = graphCol;
+  }
+  
+  
 
   // Draw the equation to the screen
   void display() {
-    stroke(0);
+    stroke(graphColor);
     // Draw all the points in the graph
     for (int i = tStart; i < tEnd/Settings.drawStep; i++) {
       float t = (float) (i * Settings.drawStep);
@@ -16,12 +24,12 @@ class Equation {
   
   // Runs a function that takes a float, applies the equation, then returns the x value
   float getX(float t) {
-    return 16 * pow(sin(t), 3);
+    return 2*cos(t) + sin(2*t) * cos(60*t);
   }
 
   // Runs a function that takes a float, applies the equation, then returns the y value
   float getY(float t) {
-    return 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t);
+    return sin(t);
   }
   
 }
