@@ -1,12 +1,18 @@
 abstract class Equation {
 
   // The domain of t, assuming the equation is continous inside the domain [tStart, tEnd)
-  int tStart = -10;
-  int tEnd = 10;
+  int tStart;
+  int tEnd;
   
   color graphColor;
   
-  Equation(color graphCol) {
+  /*
+   * Creates a new equation, with the domain of t [lowerBound, upperBound)
+   * graphCol is the color the equation is graphed with.
+  */
+  Equation(int lowerBound, int upperBound, color graphCol) {
+    lowerBound = tStart;
+    upperBound = tEnd;
     graphColor = graphCol;
   }
   
@@ -16,6 +22,7 @@ abstract class Equation {
     // Draw all the points in the graph
     for (int i = tStart; i < tEnd/Settings.drawStep; i++) {
       float t = (float) (i * Settings.drawStep);
+      // Draw the point, y(t) needs to be negated because of the canvas layout
       point(getX(t)*Settings.ppu, -getY(t)*Settings.ppu);
     }
   }
