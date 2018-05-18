@@ -1,9 +1,15 @@
 // Settings for the program, needs to be in a seperate java file
 public class Settings {
   
+  // The domain of t, such that t is drawn from [lowerBound, upperBound)
+  public final static int lowerBound = -10;
+  public final static int upperBound = 10;
+  
   // The number of sections a given quadrant obtains
-  public final static int sizeX = 5;
-  public final static int sizeY = 3;
+  public final static int sizeX = 100;
+  public final static int sizeY = 60;
+  
+  //Equation color
   
   // The pixels per unit, used to help draw, should not be modifed unless canvas size changes
   public final static int ppu = (1000/2)/sizeX;

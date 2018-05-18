@@ -1,18 +1,15 @@
 abstract class Equation {
 
   // The domain of t, assuming the equation is continous inside the domain [tStart, tEnd)
-  int tStart;
-  int tEnd;
+  int tStart = Settings.lowerBound;
+  int tEnd = Settings.upperBound;
   
   color graphColor;
   
   /*
-   * Creates a new equation, with the domain of t [lowerBound, upperBound)
-   * graphCol is the color the equation is graphed with.
+   * Creates a new equation, graphCol is the color the equation is graphed with.
   */
-  Equation(int lowerBound, int upperBound, color graphCol) {
-    lowerBound = tStart;
-    upperBound = tEnd;
+  Equation(color graphCol) {
     graphColor = graphCol;
   }
   
@@ -27,10 +24,17 @@ abstract class Equation {
     }
   }
   
+  color getColor() {
+    return graphColor;
+  }
+  
   // Runs a function that takes a float, applies the equation, then returns the x value
   abstract float getX(float t);
 
   // Runs a function that takes a float, applies the equation, then returns the y value
   abstract float getY(float t);
+  
+  // Returns the string form of the equation used, for regeneration
+  abstract String toString();
   
 }

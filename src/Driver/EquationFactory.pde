@@ -4,48 +4,55 @@
   * @author Christian Cameron
 **/
 
-class EquationFactory() {
-  
-  int tStart;
-  int tEnd;
-  
-  // Creates a new EquationFactory such that the domain of t, for all generated Equations is [lowerBound, upperBound)
-  EquationFactory(int lowerBound, int upperBound) {
-    this.tStart = lowerBound;
-    this.tEnd = upperBound;
-  }
+class EquationFactory {
 
   /**
    * Create and returns a new random Equation
    * Follows certain rules, the randomness is mostly obtained from random constants
   */
-  Equation randomEquation() {
-    
+  Equation randomEquation() {  
     // Random constants that are applied to the equation
-    int a, b, c, d;
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int d = 0;
+    int e = 1;
+    int f = 1;
+    
     // Continue to generate, to eliminate boring equations
-    while((a != 0 && c != 0) || (b != 0 && d != 0)) {
-      int a = (int) random(0.01, 10);
-      int b = (int) random(0.01, 100);
-      int c = (int) random(0.01, 10);
-      int d = (int) random(0.01, 100);
+    while((a == 0 && c == 0) || (b == 0 && d == 0) && (e == 0 && f == 0)) {
+      a = (int) random(-10, 10);
+      b = (int) random(-100, 100);
+      c = (int) random(-10, 10);
+      d = (int) random(-100, 100);
+      e = (int) random(-4, 5);
+      f = (int) random(-4, 5);
     }
     
-    new Equation(color((int)random(0,255),150,(int)random(0,255))) {
+    // Need to make variables final to use in an anonymous class
+    final int c1 = a;
+    final int c2 = b;
+    final int c3 = c;
+    final int c4 = d;
+    final int c5 = e;
+    final int c6 = f;
+    
+    
+    // Create the equation with the new constants
+    return new Equation(color(0,0,0)) {
       public float getX(float t) {
-        return a*t*sin(b*t);
+        return c1*t*pow(sin(c2*t),c5);
       }
       
       public float getY(float t) {
-        return c*t*cos(d*t);
+        return c3*t*pow(cos(c4*t),c6);
+      }
+      
+      public String toString() {
+        String msg = "f(t) = " + c1 + "*t*(sin(" + c2 + "*t)^" + c5 + "\n";
+        msg += "g(t) = " + c3 + "*t*(cos(" + c4 + "*t)^" + c6 + "\n";
+        return msg;
       }
     }; 
   }
-
-
-
-
-
-
-
 }
