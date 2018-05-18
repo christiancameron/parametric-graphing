@@ -20,7 +20,7 @@ class EquationFactory {
     int f = 0;
     
     // Continue to generate, to eliminate boring equations
-    while(((a == 0 && c == 0) || (b == 0 && d == 0)) && (e == 0 && f == 0)) {
+    while((a == 0 || c == 0) || (e == 0 || f == 0)) {
       a = (int) random(-10, 10);
       b = (int) random(-100, 100);
       c = (int) random(-10, 10);

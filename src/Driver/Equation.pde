@@ -7,7 +7,6 @@ abstract class Equation {
   // Draw the equation to the screen
   void display() {
     stroke(Settings.graphColor);
-    strokeWeight(1.5);
     // Draw lines to create the create
     for (int i = tStart; i < tEnd/Settings.drawStep; i++) {
       float t = (float) (i * Settings.drawStep);
