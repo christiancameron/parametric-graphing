@@ -1,4 +1,4 @@
-Plane plane; //<>//
+Plane plane; //<>// //<>//
 EquationFactory factory;
 
 // Cords of the rect button, post-translate
@@ -29,8 +29,8 @@ void randomDrawEquation() {
 
   // Draw the functions equations
   fill(Settings.graphColor);
-  textSize(25);
-  text(e.toString(), 25, 25);
+  textSize(15);
+  text(e.toString(), 15, 25);
 
   // Set orgin to be the center of the screen
   translate(width/2, height/2);
