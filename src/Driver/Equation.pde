@@ -1,8 +1,8 @@
-class Equation {
+abstract class Equation {
 
   // The domain of t, assuming the equation is continous inside the domain [tStart, tEnd)
-  int tStart = 0;
-  int tEnd = 100;
+  int tStart = -10;
+  int tEnd = 10;
   
   color graphColor;
   
@@ -10,8 +10,6 @@ class Equation {
     graphColor = graphCol;
   }
   
-  
-
   // Draw the equation to the screen
   void display() {
     stroke(graphColor);
@@ -23,13 +21,9 @@ class Equation {
   }
   
   // Runs a function that takes a float, applies the equation, then returns the x value
-  float getX(float t) {
-    return 2*cos(t) + sin(2*t) * cos(60*t);
-  }
+  abstract float getX(float t);
 
   // Runs a function that takes a float, applies the equation, then returns the y value
-  float getY(float t) {
-    return sin(t);
-  }
+  abstract float getY(float t);
   
 }
