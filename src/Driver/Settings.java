@@ -2,8 +2,8 @@
 public class Settings {
   
   // The domain of t, such that t is drawn from [lowerBound, upperBound)
-  public final static int lowerBound = -2;
-  public final static int upperBound = 2;
+  public final static int lowerBound = -10;
+  public final static int upperBound = 10;
   
   // The number of sections a given quadrant obtains
   public final static int sizeX = 50;

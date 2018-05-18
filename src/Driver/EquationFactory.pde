@@ -12,45 +12,29 @@ class EquationFactory {
   */
   Equation randomEquation() {  
     // Random constants that are applied to the equation
-    float a = 0;
-    float b = 0;
-    float c = 0;
-    float d = 0;
-    float e = 0;
-    float f = 0;
+    final ArrayList<Integer> sConstants = new ArrayList<Integer>(4);
+    final ArrayList<Integer> mConstants = new ArrayList<Integer>(4);
+    final ArrayList<Integer> lConstants = new ArrayList<Integer>(4);
     
-    // Continue to generate, to eliminate boring equations
-    while((a == 0 || c == 0) || (e == 0 || f == 0)) {
-      a = random(-10, 10);
-      b = random(-100, 100);
-      c = random(-10, 10);
-      d = random(-100, 100);
-      e = random(-4, 5);
-      f = random(-4, 5);
+    for(int i = 0; i < 4; i++) {
+      sConstants.add((int)random(-5,5.01));
+      mConstants.add((int)random(-10,10.01));
+      lConstants.add((int)random(-100,100.01));
     }
-    
-    // Need to make variables final to use in an anonymous class
-    final float c1 = a;
-    final float c2 = b;
-    final float c3 = c;
-    final float c4 = d;
-    final float c5 = e;
-    final float c6 = f;
-    
-    
+
     // Create the equation with the new constants
     return new Equation() {
       public float getX(float t) {
-        return c1*t*pow(sin(c2*t),c5);
+        return mConstants.get(0)*t*pow(sin(lConstants.get(0)*t),sConstants.get(0)) + mConstants.get(1)*t*pow(cos(lConstants.get(1)*t),sConstants.get(1));
       }
       
       public float getY(float t) {
-        return c3*t*pow(cos(c4*t),c6);
+        return mConstants.get(2)*t*pow(sin(lConstants.get(2)*t),sConstants.get(2)) + mConstants.get(3)*t*pow(cos(lConstants.get(3)*t),sConstants.get(3));
       }
       
       public String toString() {
-        String msg = "f(t) = " + c1 + "*t*(sin(" + c2 + "*t)^" + c5 + "\n";
-        msg += "g(t) = " + c3 + "*t*(cos(" + c4 + "*t)^" + c6 + "\n";
+        String msg = "f(t) = " + mConstants.get(0) + "*t*(sin(" + lConstants.get(0) + "*t)^" + sConstants.get(0) + " + " + mConstants.get(1) + "*t*(cos(" + lConstants.get(1) + "*t)^" + sConstants.get(1) + "\n";
+        msg += "g(t) = " + mConstants.get(2) + "*t*(sin(" + lConstants.get(2) + "*t)^" + sConstants.get(2) + " + " + mConstants.get(3) + "*t*(cos(" + lConstants.get(3) + "*t)^" + sConstants.get(3) + "\n";
         return msg;
       }
     }; 
