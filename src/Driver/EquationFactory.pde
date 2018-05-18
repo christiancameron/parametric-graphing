@@ -39,7 +39,7 @@ class EquationFactory {
     
     
     // Create the equation with the new constants
-    return new Equation(color(0,0,0)) {
+    return new Equation() {
       public float getX(float t) {
         return c1*t*pow(sin(c2*t),c5);
       }
