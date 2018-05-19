@@ -16,5 +16,5 @@ public class Settings {
   public final static int ppu = (1000/2)/sizeX;
 
   // The draw step of interating t-values
-  public final static double drawStep = .0001;
+  public final static double drawStep = .00005;
 }
