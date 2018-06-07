@@ -8,7 +8,7 @@ abstract class Equation {
   void display() {
     
   
-    stroke(color(255,0,0), 60);
+    stroke(color(255,0,51), 60);
     strokeWeight(2);
     double range = tEnd/Settings.drawStep - tStart;
     // Draw lines to create the create
@@ -20,11 +20,6 @@ abstract class Equation {
     }
     strokeWeight(1);
     stroke(0,255);
-    
-    // Draw the functions equation texts
-    fill(0);
-    textSize(15);
-    text(toString(), -480, -300);
   }
   
   // Runs a function that takes a float, applies the equation, then returns the x value

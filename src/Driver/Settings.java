@@ -18,4 +18,5 @@ public class Settings {
   public final static int mX = 440;
   public final static int mY = 290;
   public final static int mW = 30;
+  
 }

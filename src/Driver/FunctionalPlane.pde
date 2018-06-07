@@ -33,9 +33,18 @@ class FunctionalPlane extends Plane {
     }
   }
   
+  // Draw the mode button to the screen using the right color scheme
   void drawModeButton() {
     strokeWeight(1);
     fill(presColor);
     rect(Settings.mX,Settings.mY,Settings.mW,Settings.mW);
+  }
+  
+  // Write the two parametric equations to screen, using the right color scheme
+  void writeEquations(Equation e) {
+    // Draw the functions equation texts
+    fill(color(presColor));
+    textSize(15);
+    text(e.toString(), -480, -330);
   }
 }

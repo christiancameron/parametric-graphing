@@ -26,14 +26,13 @@ void randomDrawEquation() {
   // Generate the equation
   Equation e = factory.randomEquation();
   currEqu = e;
-
- 
-
+  
   //Draw the plane background to the screen
   plane.display();
 
   //Draw the equation
   e.display();
+  plane.writeEquations(e);
   
   // Draw Buttons
   plane.drawModeButton();
@@ -67,6 +66,7 @@ void mouseReleased() {
     
     plane.display();
     currEqu.display();
+    plane.writeEquations(currEqu);
     plane.drawModeButton();
     drawRandButton();
   }
