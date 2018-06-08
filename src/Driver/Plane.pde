@@ -21,11 +21,6 @@ abstract class Plane {
   abstract void drawModeButton();
   
   // Write the two parametric equations to screen, using the right color scheme
-  void writeEquations(Equation e) {
-    // Draw the functions equation texts
-    fill(color(255,0,51));
-    textSize(15);
-    text(e.toString(), -480, -330);
-  }
+  abstract void writeEquations(Equation e);
   
 }
