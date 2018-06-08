@@ -6,8 +6,8 @@ public class Settings {
   public final static int upperBound = 5;
   
   // The number of sections a given quadrant obtains
-  public final static int sizeX = 5;
-  public final static int sizeY = 3;
+  public final static int sizeX = 50;
+  public final static int sizeY = 30;
   
   // The pixels per unit, used to help draw, should not be modifed unless canvas size changes
   public final static int ppu = (1000/2)/sizeX;
