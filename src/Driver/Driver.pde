@@ -11,7 +11,7 @@ int bW = 70;
 
 // Setup the program
 void setup() {
-  size(1000, 700, P3D);
+  size(1000, 700, P2D);
 
   plane = new FunctionalPlane();
   factory = new EquationFactory();
@@ -48,7 +48,7 @@ void drawRandButton() {
   fill(0,255,0);
   rect(bX,bY,bW,bH);
   fill(0);
-  textSize(15);
+  textSize(18);
   text("Random", -470, 275+bH);
 }
 
