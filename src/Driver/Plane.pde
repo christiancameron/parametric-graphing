@@ -4,6 +4,7 @@
 */
 abstract class Plane {
 
+  final PFont font = loadFont("XITS-Italic-48.vlw");
   
   final color funcColor = color(235);
   final color presColor = color(0,0,51);

@@ -42,9 +42,10 @@ class FunctionalPlane extends Plane {
   
   // Write the two parametric equations to screen, using the right color scheme
   void writeEquations(Equation e) {
+    textFont(font);
     // Draw the functions equation texts
     fill(color(presColor));
-    textSize(15);
+    textSize(18);
     text(e.toString(), -480, -330);
   }
 }
