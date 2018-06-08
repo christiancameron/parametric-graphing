@@ -21,7 +21,7 @@ class PresentationPlane extends Plane {
   // Write the two parametric equations to screen, using the right color scheme
   void writeEquations(Equation e) {
     // Draw the functions equation texts
-    fill(color(255,0,51));
+    fill(color(255));
     textSize(15);
     text(e.toString(), -480, -330);
   }
