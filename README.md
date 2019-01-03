@@ -1,5 +1,12 @@
 # Parametric Graphing Tool
-Graph parametric equations in Processing
+#### Introduction
+Parametric equations use transformations of independent variables to graph a function.
+The engine randomly generates, graphs, and presents parametric equations in two different viewing modes: light and dark.
+
+#### Examples
+![Alt text](Images/DarkExample.png?raw=true "DarkExample")
+
+![Alt text](Images/LightExample.png?raw=true "LightExample")
 
 #### Installation
 * Download Processing
